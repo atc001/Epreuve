@@ -21,11 +21,11 @@
             </th>
             <th>{{ $boisson['description'] }}</th>
             <th>{{ $boisson['number'] }}</th>
-            <th>{{ Form::open(['url' => '/updateboisson']) }}
+            <th>{{ Form::open(['url' => '/update']) }}
                 {{ Form::hidden('id', $boisson['id']) }}
                 {{ Form::submit('Modifier') }}
                 {{ Form::close() }}
-                {{ Form::open(['url' => '/deleteboisson']) }}
+                {{ Form::open(['url' => '/delete']) }}
                 {{ Form::hidden('id', $boisson['id']) }}
                 {{ Form::submit('Supprimer') }}
                 {{ Form::close() }}

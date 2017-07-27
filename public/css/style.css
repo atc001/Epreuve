@@ -78,3 +78,17 @@ footer {
     width: 20%;
     border: 1px solid black;
 }
+#main_insert {
+    background-color: #C0C8D6;
+    height: 87%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    width: 100%;
+}
+#main_insert h2 {
+    position: absolute;
+    top: 75px;
+}

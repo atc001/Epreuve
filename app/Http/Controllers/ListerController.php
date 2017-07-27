@@ -21,4 +21,45 @@ class ListerController extends Controller
         };
         return view('lister', ["boissons" => $value]);
     }
+
+    public function insert() {
+        $contenances = Contenance::all();
+        $contenanceList = array();
+        foreach ($contenances as $contenance) {
+            $contenanceList[$contenance->id] = $contenance->contenance;
+        }
+        return view('insert', ['contenances' => $contenanceList]);
+    }
+
+    public function insert_action(Request $request) {
+        $boisson = new Boisson;
+        $boisson->name = $request->name;
+        $boisson->description = $request->description;
+        $boisson->number = $request->number;
+        $boisson->save();
+        $boisson->contenances()->attach($request->contenance);
+        return redirect('/lister');
+    }
+
+    public function update(Request $request) {
+        $boisson = Boisson::find($request->id);
+        $contenances = Contenance::all();
+        $contenanceList = array();
+        foreach ($contenances as $contenance) {
+            $contenanceList[$contenance->id] = $contenance->contenance;
+        }
+        return view('update', ['name' => $boisson->name, 'contenances' => $contenanceList, 'id' => $boisson->id, 'description' => $boisson->description, 'number' => $boisson->number,]);        
+    }
+
+    public function update_action(Request $request) {
+        $boisson = Boisson::find($request->id);
+        $boisson->name = $request->name;
+        $boisson->description = $request->description;
+        $boisson->number = $request->number;
+        $boisson->save();
+        $boisson->contenances()->detach();
+        $boisson->contenances()->attach($request->contenance);
+        return redirect('/lister');
+    }
 }
+

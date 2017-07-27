@@ -1,0 +1,29 @@
+-Début du projet le 27 à 9h.
+
+-Mise en place de ma vagrant avec php7, mysql, laravel -> Terminer à 9h45.
+
+-Me voilà confronter à un problème de réécriture d'url. Il me manquait le mod de rewrite d'apache2. (résolu)
+
+-Création progressivement de ma page d'accueil avec mes templates (layout).
+
+-Page d'accueil prête et opérationnelle.
+
+-Configuration de mes tables sur mysql réussit.
+
+-11h30 : Problème d'affichage de mes tables sur mon menu "Lister", oublie de logique mysql, table au pluriel... Laravel de m****. (résolu)
+
+-12h15 : Pause.
+
+-Retour à 12h40.
+
+-Mise en place ma page entière "Liste" et maintenant opérationnelle.
+
+-Réalisation de la page insertion avec le form. Manque plus que l'action d'insérer.
+
+-Insertion opérationnelle.
+
+-Réalisation de la page de modification avec le form + l'action.
+
+
+
+

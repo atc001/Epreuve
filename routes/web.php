@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/lister', 'ListerController@index');
+
+Route::get('/insert', 'ListerController@insert');
+
+Route::post('/insert_action', 'ListerController@insert_action');
+
+Route::post('/update', 'ListerController@update');
+
+Route::post('/update_action', 'ListerController@update_action');
