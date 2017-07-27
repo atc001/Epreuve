@@ -61,5 +61,12 @@ class ListerController extends Controller
         $boisson->contenances()->attach($request->contenance);
         return redirect('/lister');
     }
+
+    public function delete(Request $request) {
+        $boisson = Boisson::find($request->id);
+        $boisson->contenances()->detach();
+        $boisson->delete();
+        return redirect('/lister');
+    }
 }
 

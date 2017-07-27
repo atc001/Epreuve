@@ -1,4 +1,6 @@
--Début du projet le 27 à 9h.
+//Etape
+
+-Début du projet le 27/07 à 9h.
 
 -Mise en place de ma vagrant avec php7, mysql, laravel -> Terminer à 9h45.
 
@@ -23,6 +25,30 @@
 -Insertion opérationnelle.
 
 -Réalisation de la page de modification avec le form + l'action.
+
+-Réalisation de l'option delete.
+
+-Fin du projet.
+
+-Je vais néanmoins pousser un peu plus les fonctionnalités.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Utilisation
+
+Simple d'utilisation, nous arrivons directement sur une page d'accueil ou tout est très explicite. En effet vous avez un lien vers la liste et un autre pour ajouter une boisson.
+Quand vous cliquerez sur "lister", cela vous emmenera sur une page constitué d'un tableau avec toute les boissons rentrées dans la base de donnée.
+Vous pouvez également appercevoir des boutons "Modifier" et "Supprimer" afin d'éxécuter l'action de celui ci.
+Si en revanche, vous cliquez sur "Ajouter", celui ci vous emmenera vers une page pour ajouter une boisson dans la base de donnée.
+
+Si on récap, nous avons :
+                            -l'insertion qui est le "CREATE".
+                            -la liste qui est le "READ".
+                            -la modification qui est le "UPDATE".
+                            -la suppression qui est le "DELETE".
+
+Nous avons bien le CRUD.
+
 
 
 

@@ -24,3 +24,5 @@ Route::post('/insert_action', 'ListerController@insert_action');
 Route::post('/update', 'ListerController@update');
 
 Route::post('/update_action', 'ListerController@update_action');
+
+Route::post('delete', 'ListerController@delete');
