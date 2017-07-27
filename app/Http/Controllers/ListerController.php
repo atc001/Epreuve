@@ -12,13 +12,13 @@ class ListerController extends Controller
         $boissons = Boisson::all();
         $value = array();
         $i = 0;
-        foreach ($produits as $produit) {
-            array_push($value, ["name" => $produit->name, "contenance" => array(), "id" => $produit->id, "cover" => $produit->cover, "description" => $produit->description, "number" => $produit->number,]);
-            foreach ($produit->contenances as $contenance) {
+        foreach ($boissons as $boisson) {
+            array_push($value, ["name" => $boisson->name, "contenance" => array(), "id" => $boisson->id, "cover" => $boisson->cover, "description" => $boisson->description, "number" => $boisson->number,]);
+            foreach ($boisson->contenances as $contenance) {
                 array_push($value[$i]["contenance"], $contenance->contenance);
             }
             $i ++;
         };
-        return view('lister', ["produits" => $value]);
+        return view('lister', ["boissons" => $value]);
     }
 }

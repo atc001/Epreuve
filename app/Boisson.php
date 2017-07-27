@@ -8,7 +8,7 @@ class Boisson extends Model
 {
     public $timestamps = false;
     
-    public function Contenances()
+    public function contenances()
     {        
         return $this->belongsToMany('App\Contenance');
     }
