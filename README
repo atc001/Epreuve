@@ -32,6 +32,14 @@
 
 -Je vais néanmoins pousser un peu plus les fonctionnalités.
 
+-28/07
+
+-Rajout de fonctionnalité qui permet à la personne de se créer un panier.
+
+-J'ai reussi à ajouter des articles au panier, mais j'ai vite été heurté par un problème, la liste dans le panier me sortais l'id de la boisson et non son nom.(Résolu avec l'aide de Morgan)
+
+-Mise en place du delete dans le panier également.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Utilisation
@@ -48,6 +56,12 @@ Si on récap, nous avons :
                             -la suppression qui est le "DELETE".
 
 Nous avons bien le CRUD.
+
+Rajout du système de panier, nous pouvons voir 2 nouvelles rubriques intitulées "Achat" et "Panier".
+Achat, nous enverra sur une liste qui nous permettra d'ajouter les articles existant dans la base de donnée vers notre panier. Je n'ai pas réussis à faire une systeme de quantité.
+Panier, nous enverra sur le panier qui sera constitué des articles que l'on a ajouté dedans.
+
+ATTENTION !!!! Ne pas supprimer une boissons dans la base de donnée si celle ci est dans le panier. Sinon erreur.
 
 
 

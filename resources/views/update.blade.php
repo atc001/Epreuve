@@ -1,5 +1,5 @@
 @extends('layout.baseLayout')
-@section('title', 'Accueil')
+@section('title', 'Modifier')
 @section('content')
 <main id="main_insert">
     <h2>Modifier une boisson</h2>

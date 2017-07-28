@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Boisson as Boisson;
 use App\Contenance as Contenance;
+use App\Panier as Panier;
 
 class ListerController extends Controller
 {
@@ -67,6 +68,42 @@ class ListerController extends Controller
         $boisson->contenances()->detach();
         $boisson->delete();
         return redirect('/lister');
+    }
+
+    public function lister_achat() {
+        $boissons = Boisson::all();
+        $value = array();
+        $i = 0;
+        foreach ($boissons as $boisson) {
+            array_push($value, ["name" => $boisson->name, "contenance" => array(), "id" => $boisson->id, "cover" => $boisson->cover, "description" => $boisson->description, "number" => $boisson->number,]);
+            foreach ($boisson->contenances as $contenance) {
+                array_push($value[$i]["contenance"], $contenance->contenance);
+            }
+            $i ++;
+        };
+        return view('lister_achat', ["boissons" => $value]);
+    }
+
+    public function insert_panier(Request $request) {
+        $panier = new Panier;
+        $panier->boisson_id = $request->id;
+        $panier->save();
+        return redirect('/lister_achat');
+    }
+
+    public function panier() {
+        $paniers = Panier::all();
+        $value = array();
+        foreach ($paniers as $panier) {
+            array_push($value, ["boisson_name" => Boisson::find($panier->boisson_id)->name, "id" => $panier->id,]);
+        };
+        return view('panier', ["paniers" => $value]);
+    }
+
+    public function delete_panier(Request $request) {
+        $panier = Panier::find($request->id);
+        $panier->delete();
+        return redirect('/panier');
     }
 }
 
